@@ -1,5 +1,6 @@
 package config;
 
+import beanFactory.ColorFactoryBean;
 import entity.Person;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
@@ -22,5 +23,10 @@ public class MainConfig  {
     @Bean("linus")
     public Person person02(){
         return new Person("linus",52);
+    }
+
+    @Bean("ColorFactoryBean")
+    public ColorFactoryBean colorFactoryBean(){
+        return new ColorFactoryBean();
     }
 }
