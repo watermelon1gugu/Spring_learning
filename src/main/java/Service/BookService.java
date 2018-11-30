@@ -26,6 +26,15 @@ public class BookService {
         @Inject:
             需要导入javax.inject的包 和Autowaired功能一样 可以primary 没有required属性
 
+
+    3.    @Bean标注的方法 创建对象的时候 方法参数的值从容器中获取
+    4.  自定义组件想要使用Spring容器底层的一些组件(ApplicationContext)
+         自定义组件实现xxxAware，在创建对象的时候 会调用接口规定的方法注入相关组件
+         xxxAware 功能都是使用xxxAwareProcessor实现 后置处理器
+         ApplicationContextAware ==> ApplicationContextAwareProcessor
+
+         判断bean是否实现了接口 然后权限检查 然后 invokeAwareInterFace
+         方法内挨个判断bean实现了那些Aware接口 然后就从ioc池里注入
      */
     //@Qualifier("bookDAO")
     @Autowired(required = false)//构造器 参数 方法 属性 都可以标注Autowaired
