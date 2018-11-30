@@ -1,5 +1,7 @@
 package entity;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Person {
 
     public Person(String name,int age) {
@@ -12,6 +14,16 @@ public class Person {
 
     public int age;
     public String name;
+    @Value("${person.nickName}")
+    private String nikeName;
+
+    public String getNikeName() {
+        return nikeName;
+    }
+
+    public void setNikeName(String nikeName) {
+        this.nikeName = nikeName;
+    }
 
     public int getAge() {
         return age;
@@ -27,5 +39,8 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public void print(){
+        System.out.println("Nick name:"+nikeName);
     }
 }
