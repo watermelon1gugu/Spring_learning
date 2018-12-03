@@ -16,6 +16,4 @@ public class MainConfigOfLifeCycle {
     public Car car(){
         return new Car();
     }
-
-
 }
